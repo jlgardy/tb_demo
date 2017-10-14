@@ -10,7 +10,7 @@
     
 **2. You will also need to download the data files we'll be using, which are provided to you via this repo. You'll need:**
 - the *M. tuberculosis* H37Rv reference genome: [reference.fa](reference.ga) - this is version NC000962.3 of the genome 
-- the paired-end sequencing data from our three patients (note that these are abbreviated versions of the full files, shortened to improve the speed of the demo): 
+- the paired-end sequencing data from our three patients's TB isolates (note that these are abbreviated versions of the full files, shortened to improve the speed of the demo): 
   - [patient_1_1.fastq.gz](patient_1_1.fastq.gz) & [patient_1_2.fastq.gz](patient_1_2.fastq.gz)
   - [patient_2_1.fastq.gz](patient_2_1.fastq.gz) & [patient_2_2.fastq.gz](patient_2_2.fastq.gz)
   - [patient_3_1.fastq.gz](patient_3_1.fastq.gz) & [patient_3_2.fastq.gz](patient_3_2.fastq.gz)
@@ -29,3 +29,8 @@
 **4. Index the reference genome. This only needs to be done once, anytime you download a new reference genome:**
 
 `bwa index reference.fa` 
+
+**5. Map the paired-end reads from each patient's isolate against the reference using bwa mem:**
+
+`bwa mem reference.fa reads1.fastq reads2.fastq > outfiile.sam` is the general syntax you'd use
+`bwa mem reference.fa patient1_1.fastq patient1_2.fastq > patient_1.sam` is an example using the data from patient_1's isolate
