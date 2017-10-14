@@ -26,3 +26,6 @@
 
 `gunzip *.gz` unzips the compressed fastq files
 
+**4. Index the reference genome. This only needs to be done once, anytime you download a new reference genome:**
+
+`bwa index reference.fa` 
