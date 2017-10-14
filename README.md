@@ -18,9 +18,11 @@
 
 **3. Make a directory called tb_demo and place your downloaded reference genome and sequencing data there:**
 
-`mkdir tb_demo`
+`mkdir tb_demo` creates the directory
 
-`mv reference.fa tb_demo`
+`mv reference.fa tb_demo` moves the reference genome to the tb_demo directory (this command will vary depending on where you downloaded your data to and where you created the tb_demo directory)
 
-`mv *.fastq.gz tb_demo`
+`mv *.fastq.gz tb_demo` moves the data to the tb_demo directory (as above, this may vary depending on where you created things)
+
+`gunzip *.gz` unzips the compressed fastq files
 
