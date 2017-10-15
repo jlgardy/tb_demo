@@ -5,7 +5,6 @@
 * BWA 0.7.13 (http://bio-bwa.sourceforge.net/index.shtml)
 * samtools 1.3 (http://www.htslib.org)
 * bcftools 1.3 (http://www.htslib.org)
-* bedtools (http://bedtools.readthedocs.io/en/latest/) 
 * Mykrobe TB (not Mykrobe MRSA!) (http://www.mykrobe.com/products/predictor/#tb)
     
     
@@ -62,3 +61,8 @@
 `samtools mpileup -q 30 -u -f reference.fa patient_1.sorted > patient_1.bcf -I` is an example using the data from patient_1's isolate
 
 
+**8. For each pileup file, we will convert it to a human-readable format and, at the same time, extract only those positions at which our genome is different from the reference genome - the variants:**
+
+`bcftools call -O v -mv file.bcf > file.vcf` is the general syntax you'd use
+
+`bcftools call -O v -mv patient_1.bcf > patient_1.vcf` is an example using the data from patient_1's isolate
