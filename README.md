@@ -68,4 +68,5 @@
 `bcftools call -O v -mv patient_1.bcf > patient_1.vcf` is an example using the data from patient_1's isolate
 
 **9. We would then filter our VCF to keep only positions that we trust - this is more advanced bioinformatics, and there are a LOT of factors that will influence the types of filtering you might do. For demo purposes, we are going to skip ahead to the results file, showing only those high-confidence variants that are different between our three genomes.**
+- [variants.fa](variants.fa) 
 
