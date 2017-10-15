@@ -5,7 +5,7 @@
 * BWA 0.7.13 (http://bio-bwa.sourceforge.net/index.shtml)
 * samtools 1.3 (http://www.htslib.org)
 * bcftools 1.3 (http://www.htslib.org)
-* Mykrobe TB (not Mykrobe MRSA!) (http://www.mykrobe.com/products/predictor/#tb)
+
     
     
 **2. You will also need to download the data files we'll be using, which are provided to you via this repo. You'll need:**
