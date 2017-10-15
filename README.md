@@ -69,4 +69,5 @@
 
 **9. We would then filter our VCF to keep only positions that we trust - this is more advanced bioinformatics, and there are a LOT of factors that will influence the types of filtering you might do. For demo purposes, we are going to skip ahead to the results file, showing only those high-confidence variants that are different between our three genomes.**
 - [variants.fa](variants.fa) 
+- the custom script I often use for a quick overview of all variant positions in all VCFs in a directory is [vcf_to_fasta_het.py](vcf_to_fasta_het.py). To run it, you must have python installed and you can use the syntax `python vcf_to_fasta_het.py -x vcfdirectory outputprefix`
 
