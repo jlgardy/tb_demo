@@ -55,3 +55,10 @@
 `samtools index patient_1.sorted` is an example using the data from patient_1's isolate
 
 
+**7. For each sorted, indexed BAM file, we will generate a pileup file summarizing the mapping at each position relative to our reference genome:**
+
+`samtools mpileup -q 30 -u -f reference.fa file.sorted > file.bcf -I` is the general syntax you'd use
+
+`samtools mpileup -q 30 -u -f reference.fa patient_1.sorted > patient_1.bcf -I` is an example using the data from patient_1's isolate
+
+
