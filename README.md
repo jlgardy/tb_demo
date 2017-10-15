@@ -8,6 +8,7 @@
 * bedtools (http://bedtools.readthedocs.io/en/latest/) 
 * Mykrobe TB (not Mykrobe MRSA!) (http://www.mykrobe.com/products/predictor/#tb)
     
+    
 **2. You will also need to download the data files we'll be using, which are provided to you via this repo. You'll need:**
 - the *M. tuberculosis* H37Rv reference genome: [reference.fa](reference.ga) - this is version NC000962.3 of the genome 
 - the paired-end sequencing data from our three patients's TB isolates (note that these are abbreviated versions of the full files, shortened to improve the speed of the demo): 
@@ -26,12 +27,31 @@
 
 `gunzip *.gz` unzips the compressed fastq files
 
+
 **4. Index the reference genome. This only needs to be done once, anytime you download a new reference genome:**
 
 `bwa index reference.fa` 
+
 
 **5. Map the paired-end reads from each patient's isolate against the reference using bwa mem:**
 
 `bwa mem reference.fa reads1.fastq reads2.fastq > outfiile.sam` is the general syntax you'd use
 
 `bwa mem reference.fa patient1_1.fastq patient1_2.fastq > patient_1.sam` is an example using the data from patient_1's isolate
+
+
+**6. For each SAM file, we must do a few operations to make it efficient to work with. We will use three different samtools utilities - view, sort, and index:**
+
+`samtools view -b file.sam > file.bam` is the general syntax you'd use to **convert** the text SAM file to the binary BAM format
+
+`samtools view -b patient_1.sam > patient_1.bam` is an example using the data from patient_1's isolate
+
+`samtools sort file.bam -o file.sorted` is the general syntax you'd use to **sort** the BAM 
+
+`samtools sort patient_1.bam -o patient_1.sorted` is an example using the data from patient_1's isolate
+
+`samtools index file.sorted` is the general syntax you'd use to **index** the BAM 
+
+`samtools index patient_1.sorted` is an example using the data from patient_1's isolate
+
+
